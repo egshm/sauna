@@ -1,0 +1,49 @@
+@use "../../foundation/forward" as fwd;
+
+/*----------------------------------------
+  c-heading-lv2
+----------------------------------------*/
+.c-heading-lv2 {
+  --c_main: var(--c_base);
+  --c_sub: var(--c_accent);
+  display: flex;
+  align-items: end;
+}
+
+.c-heading-lv2__main {
+  color: var(--c_main);
+  font-family: var(--ff_lato);
+  font-size: var(--fz_32);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.c-heading-lv2__sub {
+  position: relative;
+  padding-left: 1.6em;
+  color: var(--c_sub);
+  font-size: var(--fz_20);
+  font-weight: 500;
+}
+
+/* スラッシュ */
+.c-heading-lv2__sub::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0.8em;
+  width: 1px;
+  height: 1em;
+  background: currentColor;
+  transform: rotate(40deg);
+}
+
+@media (min-width: 768px) {
+  .c-heading-lv2__main {
+    font-size: fwd.make-clamp(32, 48, 768, 1366);
+  }
+
+  .c-heading-lv2__sub {
+    font-size: fwd.make-clamp(20, 24, 768, 1366);
+  }
+}

@@ -1,0 +1,147 @@
+///
+/// @mixin hover-opacity
+/// 
+/// ホバー可能な要素に、透過のホバーエフェクトを適用します。
+/// 
+/// Note:
+/// - focus-visible の時も適用します。
+/// 
+/// @param {Number} $opacity - 不透明度（0~1）
+/// @param {Time} $transition-time - トランジション時間
+/// 
+@mixin hover-opacity($opacity: 0.7, $transition-time: 0.3s) {
+
+  transition: opacity $transition-time;
+
+  // フォーカス時
+  &:focus-visible {
+    opacity: $opacity;
+  }
+
+  // ホバー時
+  @media (any-hover: hover) {
+    &:hover {
+      opacity: $opacity;
+    }
+  }
+}
+
+
+///
+/// @mixin underline-anim
+/// 
+/// 呼び出し元が hover / focus-visible 状態のときに、
+/// ターゲット要素に下線アニメーションを適用します。
+/// 
+/// Note:
+/// - 下線の色は呼び出し元の color を継承します。
+/// 
+/// @param {String} $target
+///   - ターゲット要素
+/// 
+/// @param {Length} $line-width
+///   - 下線の太さ
+/// 
+/// @param {String} $combinator
+///   - 呼び出し元とターゲットの間の結合子（" ", ">", "+", "~"）
+/// 
+//// @param {Time} $transition-time
+///   - 下線アニメーションのトランジション継続時間
+/// 
+@mixin underline-anim(
+  $target,
+  $line-width: 1px,
+  $combinator: " ",
+  $transition-time: 0.3s
+) {
+
+  &#{$combinator}#{$target} {
+    display: inline;
+    background-image: linear-gradient(90deg, currentColor, currentColor);
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-size: 0 $line-width;
+    transition: background-size $transition-time;
+  }
+
+  &:focus-visible#{$combinator}#{$target} {
+    background-size: 100% $line-width;
+  }
+
+  /* ホバー可能時 */
+  @media (any-hover: hover) {
+    &:hover#{$combinator}#{$target} {
+      background-size: 100% $line-width;
+    }
+  }
+}
+
+
+///
+/// @mixin background-parallelogram
+/// 
+/// 色付き背景の上に平行四辺形を重ねます。
+/// 
+///  
+/// @param {Length} $bg-top
+///   - 背景の上端位置
+/// 
+/// @param {Length} $bg-height
+///   - 背景の高さ
+/// 
+/// @param {Length} $para-width
+///   - 平行四辺形の幅
+/// 
+/// @param {Angle} $para-angle
+///   - 平行四辺形の傾き角度
+///
+/// @param {Length} $para-left
+///   - 平行四辺形の左端位置
+/// 
+/// @param {Length} $para-width-max
+///   - 平行四辺形の最大幅
+/// 
+/// @param {Color} $bg-color
+///   - 背景の色
+/// 
+/// @param {Color} $para-color
+///   - 平行四辺形の色 
+/// 
+@mixin background-parallelogram(
+  $bg-top,
+  $bg-height,
+  $para-width,
+  $para-angle,
+  $para-left,
+  $para-width-max: none,
+  $bg-color: var(--c_bg),
+  $para-color: var(--c_white)
+) {
+
+  position: relative;
+
+  &::before { /* 色付き背景 */
+    content: '';
+    position: absolute;
+    top: $bg-top;
+    left: 0;
+    width: 100vw; /* ビューポート幅いっぱいに広げる */
+    height: $bg-height;
+    margin-left: calc(50% - 50vw);
+    background: $bg-color;
+    z-index: -2;
+  }
+
+  &::after { /* 平行四辺形 */
+    content: '';
+    position: absolute;
+    top: $bg-top;
+    left: $para-left;
+    width: $para-width;
+    max-width: $para-width-max;
+    height: $bg-height;
+    background: $para-color;
+    transform: skewX($para-angle);
+    z-index: -1; /* 色付き背景の上に重ねる */
+  }
+}

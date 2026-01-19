@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex , nofollow">
+    <meta name="description" content="KOHAN SAUNAは、フィンランド式の薪サウナを湖畔に構え、自然と静けさの中で“ととのう”体験を提供しています。">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOHAN SAUNA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+JP:wght@100..900&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/favicon.png" type="img/png">
+  </head>
+  <body>
+    <!-- スクリーンリーダ用のローディング画面テキスト -->
+    <span id="js-msgLoading" aria-live="polite" class="u-visually-hidden">
+      読み込み中です。しばらくお待ちください。
+    </span>
+
+    <!-- .l-header -->
+    <header class="l-header is-loading" id="js-header">
+      <div class="l-header__inner">
+        <!-- .c-logo -->
+        <p class="c-logo l-header__logo">
+          <a href="index.html" class="c-logo__link">
+            <img class="c-logo__img js-logo" src="images/logo.png" alt="KOHAN SAUNAのロゴ | トップページを開く" width="100" height="41">
+          </a>
+        </p>
+        <!-- /.c-logo -->
+
+        <!-- .c-hamburger -->
+        <button id="js-hamburger" class="c-hamburger l-header__hamburger" aria-label="メニューを開く" aria-controls="spmenu" aria-expanded="false">
+          <span class="c-hamburger__line"></span>
+        </button>
+        <!-- /.c-hamburger -->
+
+        <!-- .c-menu -->
+        <nav aria-label="メインメニュー" class="c-menu l-header__menu">
+          <ul class="c-menu__list">
+            <li class="c-menu__item js-menuItem">
+              <a href="index.html" class="c-menu__link js-spmenuLink">
+                <span class="c-menu__text-main">トップ</span>
+                <span class="c-menu__text-sub">Top</span>
+              </a>
+            </li>
+            <li class="c-menu__item js-menuItem">
+              <a href="#about" class="c-menu__link js-spmenuLink">
+                <span class="c-menu__text-main">私たちについて</span>
+                <span class="c-menu__text-sub">About</span>
+              </a>
+            </li>
+            <li class="c-menu__item js-menuItem">
+              <a href="#sauna" class="c-menu__link js-spmenuLink">
+                <span class="c-menu__text-main">サウナ</span>
+                <span class="c-menu__text-sub">Sauna</span>
+              </a>
+            </li>
+            <li class="c-menu__item js-menuItem">
+              <a href="#access" class="c-menu__link js-spmenuLink">
+                <span class="c-menu__text-main">アクセス</span>
+                <span class="c-menu__text-sub">Access</span>
+              </a>
+            </li>
+            <li class="c-menu__item js-menuItem">
+              <a href="#reservation" class="c-menu__link js-spmenuLink">
+                <span class="c-menu__text-main">ご予約</span>
+                <span class="c-menu__text-sub">Reservation</span>
+              </a>
+            </li>
+            <li class="c-menu__item js-menuItem">
+              <a href="#contact" class="c-menu__link js-spmenuLink">
+                <span class="c-menu__text-main">お問い合わせ</span>
+                <span class="c-menu__text-sub">Contact</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <!-- /.c-menu -->
+
+        <!-- .c-menu -->
+        <nav aria-label="スマホ用メニュー" aria-hidden="true" id="spmenu" class="c-menu l-header__spmenu js-spmenu">
+          <ul class="c-menu__list">
+            <li class="c-menu__item js-menuItem">
+              <a href="index.html" class="c-menu__link js-spmenuLink">
+                <span class="c-menu__text-main">トップ</span>
+                <span class="c-menu__text-sub">Top</span>
+              </a>
+            </li>
+            <li class="c-menu__item js-menuItem">
+              <a href="#about" class="c-menu__link js-spmenuLink">
+                <span class="c-menu__text-main">私たちについて</span>
+                <span class="c-menu__text-sub">About</span>
+              </a>
+            </li>
+            <li class="c-menu__item js-menuItem">
+              <a href="#sauna" class="c-menu__link js-spmenuLink">
+                <span class="c-menu__text-main">サウナ</span>
+                <span class="c-menu__text-sub">Sauna</span>
+              </a>
+            </li>
+            <li class="c-menu__item js-menuItem">
+              <a href="#access" class="c-menu__link js-spmenuLink">
+                <span class="c-menu__text-main">アクセス</span>
+                <span class="c-menu__text-sub">Access</span>
+              </a>
+            </li>
+            <li class="c-menu__item js-menuItem">
+              <a href="#reservation" class="c-menu__link js-spmenuLink">
+                <span class="c-menu__text-main">ご予約</span>
+                <span class="c-menu__text-sub">Reservation</span>
+              </a>
+            </li>
+            <li class="c-menu__item js-menuItem">
+              <a href="#contact" class="c-menu__link js-spmenuLink">
+                <span class="c-menu__text-main">お問い合わせ</span>
+                <span class="c-menu__text-sub">Contact</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <!-- /.c-menu -->
+      </div>
+    </header>
+    <!-- /.l-header -->
+
+    <!-- .p-page-top -->
+    <main class="p-page-top js-main is-loading" id="page-top">
+      <!-- .p-first-view -->
+      <div class="p-first-view p-page-top__first-view js-scrollSpy" id="js-firstView">
+        <ul class="p-first-view__slider" aria-hidden="true" id="js-fvSlider">
+          <li class="p-first-view__slide">
+            <img class="p-first-view__img" src="images/fv.jpg" alt="" width="375" height="611">
+          </li>
+          <li class="p-first-view__slide">
+            <img class="p-first-view__img" src="images/fv-02.jpg" alt="" width="375" height="611">
+          </li>
+          <li class="p-first-view__slide">
+            <img class="p-first-view__img" src="images/fv-03.jpg" alt="" width="375" height="611">
+          </li>
+        </ul>
+        <div class="p-first-view__inner">
+          <div class="p-first-view__content">
+            <h1 class="p-first-view__title">Relax<br>From <br class="p-first-view__title-br">The Bottom</h1>
+            <div class="p-first-view__text-wrap">
+              <p class="p-first-view__text">湖畔と森に囲まれて</p>
+              <p class="p-first-view__text">ととのう、という贅沢</p>
+            </div>
+            <div class="p-first-view__news-bar">
+              <!-- .c-news-bar -->
+              <a href="#!" class="c-news-bar">
+                <span class="c-news-bar__label">News</span>
+                <div class="c-news-bar__body">
+                  <time class="c-news-bar__date" datetime="2026-01-14">2026.01.14</time>
+                  <span class="c-news-bar__category">お知らせ</span>
+                  <p class="c-news-bar__text"><span>新サイトを公開しました。</span></p>
+                </div>
+                <!-- 右矢印アイコン -->
+                <div class="c-news-bar__arrow-wrap" aria-hidden="true">
+                  <svg class="c-news-bar__arrow" aria-hidden="true" width="19.5px" height="7.5px">
+                    <path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" fill="none" d="M0.500,5.500 L16.500,5.500 L11.1000,1.500 "/>
+                  </svg>
+                </div>
+              </a>
+              <!-- /.c-news-bar -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.p-first-view -->
+
+      <!-- .p-about -->
+      <section class="p-about p-page-top__about js-scrollSpy">
+        <div class="p-about__inner">
+          <div class="p-about__body">
+            <!-- .c-heading-lv2 -->
+            <hgroup class="c-heading-lv2 p-about__title" id="about">
+              <h2 class="c-heading-lv2__main">About</h2>
+              <p class="c-heading-lv2__sub">私たちについて</p>
+            </hgroup>
+            <!-- /.c-heading-lv2 -->
+            <p class="p-about__text-main">
+              <span>都会の喧騒を離れて、</span>
+              <span>上質なサウナ体験を</span>
+            </p>
+            <p class="p-about__text-sub">
+              湖畔のほとり、深い森に囲まれた場所に、KOHAN SAUNAはあります。<br>
+              木のぬくもりに満ちたサウナ小屋で、薪のはぜる音に耳を澄ませ、ゆっくりと立ちのぼる蒸気に身をゆだねるひととき。
+              自然とひとつになりながら、深く、静かに、リラックスする。<br>
+              <span class="u-fw-bold">KOHAN SAUNAで、あなた本来のリズムを取り戻してみませんか。</span>
+            </p>
+            <!-- .c-btn -->
+            <a href="#!" class="c-btn p-about__btn">
+              <span class="c-btn__text">View more</span>
+              <svg class="c-btn__arrow" aria-hidden="true" width="19.5px" height="7.5px">
+                <path fill-rule="evenodd" stroke="rgb(255, 255, 255)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" fill="none" d="M0.500,5.500 L16.500,5.500 L11.1000,1.500 "/>
+              </svg>
+            </a>
+            <!-- /.c-btn -->
+          </div>
+          <figure class="p-about__img-wrap">
+            <img src="images/about.jpg" alt="" class="p-about__img" width="375" height="248">
+          </figure>
+        </div>
+      </section>
+      <!-- /.p-sevices -->
+
+      <!-- .p-sauna -->
+      <section class="p-sauna p-page-top__sauna js-scrollSpy">
+        <div class="p-sauna__inner">
+          <!-- .c-heading-lv2 -->
+          <hgroup class="c-heading-lv2 p-sauna__title" id="sauna">
+            <h2 class="c-heading-lv2__main">Sauna</h2>
+            <p class="c-heading-lv2__sub">サウナ</p>
+          </hgroup>
+          <!-- /.c-heading-lv2 -->
+          <p class="p-sauna__text-main">
+            <span>サウナの本場、</span>
+            <span>フィンランドから仕入れた</span>
+            <span>こだわりの薪ストーブを使用</span>
+          </p>
+          <p class="p-sauna__text-sub">
+            KOHAN SAUNAでは、本場フィンランド式○○社製薪ストーブを、すべてのサウナに採用。<br>
+            力強くも、どこかやさしい熱。その心地よさが、深い「ととのい」へと導いてくれます。<br>
+            ここでは、私たちがこだわり抜いて作ったサウナを一部ご紹介します。
+          </p>
+          <ul class="p-sauna__list">
+            <li class="p-sauna__item">
+              <div class="p-sauna__body">
+                <h3 class="p-sauna__item-title">
+                  <span class="p-sauna__number">01</span>
+                  1号棟 タンペレ
+                </h3>
+                <p class="p-sauna__item-text">
+                  KOHAN SAUNAの原点。<br>
+                  本場フィンランドを実際に訪れ、現地のサウナ文化や設計思想を学び、
+                  その経験をもとに一から形にした、こだわりのサウナです。<br>
+                </p>
+              </div>
+              <figure class="p-sauna__img-wrap">
+                <img src="images/sauna.jpg" alt="" class="p-sauna__img" width="375" height="160">
+              </figure>
+            </li>
+            <li class="p-sauna__item">
+              <div class="p-sauna__body">
+                <h3 class="p-sauna__item-title">
+                  <span class="p-sauna__number">02</span>
+                  2号棟 エスポー
+                </h3>
+                <p class="p-sauna__item-text">
+                  2023年に作った2つ目のサウナ。<br>
+                  室内には木の香りが優しく広がり、自然光が柔らかく差し込む、落ち着いた空間に仕上げました。<br>
+                  シンプルながらも深いととのいを味わえる設計です。
+                </p>
+              </div>
+              <figure class="p-sauna__img-wrap">
+                <img src="images/sauna-02.jpg" alt="" class="p-sauna__img" width="375" height="160">
+              </figure>
+            </li>
+          </ul>
+          <!-- .c-btn -->
+          <a href="#!" class="c-btn p-sauna__btn">
+            <span class="c-btn__text">View more</span>
+            <svg class="c-btn__arrow" aria-hidden="true" width="19.5px" height="7.5px">
+              <path fill-rule="evenodd" stroke="rgb(255, 255, 255)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" fill="none" d="M0.500,5.500 L16.500,5.500 L11.1000,1.500 "/>
+            </svg>
+          </a>
+          <!-- /.c-btn -->
+        </div>
+      </section>
+      <!-- /.p-sauna -->
+
+      <!-- .p-access -->
+      <section class="p-access p-page-top__access js-scrollSpy">
+        <div class="p-access__inner">
+          <div class="p-access__body">
+            <!-- .c-heading-lv2 -->
+            <hgroup class="c-heading-lv2 p-access__title" id="access">
+              <h2 class="c-heading-lv2__main">Access</h2>
+              <p class="c-heading-lv2__sub">アクセス</p>
+            </hgroup>
+            <!-- /.c-heading-lv2 -->
+            <div class="p-access__content">
+              <div class="p-access__text-wrap">
+                <p class="p-access__text">
+                  〒000-000<br>
+                  山梨県南都留郡×××××××××××<br>
+                  TEL 0494-00-0000<br>              
+                </p>
+                <p class="p-access__text">
+                  首都圏方面からお車で約1時間30分（最寄りIC：××自動車道「××IC」）です。<br>
+                  最寄りICを降りてからは、一般道を使って約30分（22km）で到着します。
+                </p>
+              </div>
+              <div class="p-access__map-wrap">
+                <iframe class="p-access__map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d415955.6051124668!2d138.22419949267513!3d35.46338008799347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6019667a51f18e6d%3A0x74c11388885b7d1c!2z5bGx5qKo55yM5Y2X6YO955WZ6YOh!5e0!3m2!1sja!2sjp!4v1768728859346!5m2!1sja!2sjp" title="KOHAN SAUNAの所在地" width="335" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+            </div>
+          </div>
+          <div class="p-access__bg" aria-hidden="true"></div>
+        </div>
+      </section>
+      <!-- /.p-access -->
+
+      <!-- .p-reservation -->
+      <section class="p-reservation p-page-top__reservation js-scrollSpy">
+        <div class="p-reservation__inner">
+          <!-- .c-heading-lv2 -->
+          <hgroup class="c-heading-lv2 p-reservation__title" id="reservation">
+            <h2 class="c-heading-lv2__main">Reservation</h2>
+            <p class="c-heading-lv2__sub">ご予約</p>
+          </hgroup>
+          <!-- /.c-heading-lv2 -->
+          <ul class="p-reservation__list">
+            <li class="p-reservation__item">
+              <a href="#!" class="p-reservation__link">
+                <p class="p-reservation__text">
+                  <span>Day Sauna</span>
+                  <svg class="p-reservation__arrow" aria-hidden="true" width="19.5px" height="7.5px">
+                    <path fill-rule="evenodd" stroke="rgb(255, 255, 255)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" fill="none" d="M0.500,5.500 L16.500,5.500 L11.1000,1.500 "/>
+                  </svg>
+                </p>
+                <figure class="p-reservation__img-wrap">
+                  <img src="images/reservation.jpg" alt="" class="p-reservation__img" width="375" height="200">
+                </figure>
+              </a>
+            </li>
+            <li class="p-reservation__item">
+              <a href="#!" class="p-reservation__link">
+                <p class="p-reservation__text">
+                  <span>Sauna & Dining</span>
+                  <svg class="p-reservation__arrow" aria-hidden="true" width="19.5px" height="7.5px">
+                    <path fill-rule="evenodd" stroke="rgb(255, 255, 255)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" fill="none" d="M0.500,5.500 L16.500,5.500 L11.1000,1.500 "/>
+                  </svg>
+                </p>
+                <figure class="p-reservation__img-wrap">
+                  <img src="images/reservation-02.jpg" alt="" class="p-reservation__img" width="375" height="200">
+                </figure>
+              </a>
+            </li>
+            <li class="p-reservation__item">
+              <a href="#!" class="p-reservation__link">
+                <p class="p-reservation__text">
+                  <span>Sauna & Stay</span>
+                  <svg class="p-reservation__arrow" aria-hidden="true" width="19.5px" height="7.5px">
+                    <path fill-rule="evenodd" stroke="rgb(255, 255, 255)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" fill="none" d="M0.500,5.500 L16.500,5.500 L11.1000,1.500 "/>
+                  </svg>
+                </p>
+                <figure class="p-reservation__img-wrap">
+                  <img src="images/reservation-03.jpg" alt="" class="p-reservation__img" width="375" height="200">
+                </figure>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- /.p-reservation -->
+
+      <!-- .p-contact -->
+      <section class="p-contact p-page-top__contact js-scrollSpy">
+        <div class="p-contact__inner">
+          <!-- .c-heading-lv2 -->
+          <hgroup class="c-heading-lv2 p-contact__title" id="contact">
+            <h2 class="c-heading-lv2__main">Contact</h2>
+            <p class="c-heading-lv2__sub">お問い合わせ</p>
+          </hgroup>
+          <!-- /.c-heading-lv2 -->
+          <p class="p-contact__text">
+            ご質問やご相談がありましたら、どうぞお気軽にお問い合わせください。<br>
+            スタッフが心を込めて対応させていただきます。
+          </p>
+          <div class="p-contact__btn-wrap">
+            <!-- .c-btn -->
+            <a href="#!" class="c-btn p-contact__btn">
+              <span class="c-btn__text">お問い合わせフォームへ</span>
+              <svg class="c-btn__arrow" aria-hidden="true" width="19.5px" height="7.5px">
+                <path fill-rule="evenodd" stroke="rgb(255, 255, 255)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" fill="none" d="M0.500,5.500 L16.500,5.500 L11.1000,1.500 "/>
+              </svg>
+            </a>
+            <!-- /.c-btn -->
+          </div>
+        </div>
+      </section>
+      <!-- /.p-contact -->
+    </main>
+    <!-- /.p-page-top -->
+
+    <!-- .l-footer -->
+    <footer class="l-footer is-loading" id="js-footer">
+      <div class="l-footer__inner">
+        <div class="l-footer__menu-wrap">
+          <ul class="l-footer__menu">
+            <li class="l-footer__menu-item">
+              <a href="index.html" class="l-footer__link">トップ</a>
+            </li>
+            <li class="l-footer__menu-item">
+              <a href="#about" class="l-footer__link">私たちについて</a>
+            </li>
+            <li class="l-footer__menu-item">
+              <a href="#sauna" class="l-footer__link">サウナ</a>
+            </li>
+            <li class="l-footer__menu-item">
+              <a href="#access" class="l-footer__link">アクセス</a>
+            </li>
+          </ul>
+          <ul class="l-footer__menu">
+            <li class="l-footer__menu-item">
+              <a href="#reservation" class="l-footer__link">ご予約</a>
+            </li>
+            <li class="l-footer__menu-item">
+              <a href="#contact" class="l-footer__link">お問い合わせ</a>
+            </li>
+          </ul>
+        </div>
+        <div class="l-footer__body">
+          <!-- .c-logo -->
+          <p class="c-logo l-footer__logo">
+            <a href="index.html" class="c-logo__link">
+              <img class="c-logo__img js-logo" src="images/logo.png" alt="KOHAN SAUNAのロゴ | トップページを開く" width="160" height="66">
+            </a>
+          </p>
+          <!-- /.c-logo -->
+          <div class="l-footer__text-wrap">
+            <p class="l-footer__text">株式会社 湖畔サウナ</p>
+            <p class="l-footer__text">〒000-000 山梨県南都留郡×××××××××××</p>
+            <p class="l-footer__text">TEL 0494-00-0000</p>
+            <p class="l-footer__text">FAX 000-0000-0000</p>
+          </div>
+        </div>
+      </div>
+      <small class="l-footer__copyright" lang="en">Copyright &copy; KOHAN SAUNA CO.LTD All Rights Reserved.</small>
+    </footer>
+    <!-- /.l-footer -->
+
+    <!-- トップに戻るボタン -->
+    <div class="p-page-top__btn" id="js-topBtn">
+      <a href="#page-top" aria-label="ページの先頭へ戻る" class="c-btn-icon">
+        <svg aria-hidden="true" class="c-btn-icon__icon" width="15" height="21" viewBox="0 0 15 21" fill="none">
+          <path d="M8.07039 0.292893C7.67986 -0.0976315 7.0467 -0.0976315 6.65617 0.292893L0.292213 6.65685C-0.0983109 7.04738 -0.0983109 7.68054 0.292213 8.07107C0.682738 8.46159 1.3159 8.46159 1.70643 8.07107L7.36328 2.41421L13.0201 8.07107C13.4107 8.46159 14.0438 8.46159 14.4343 8.07107C14.8249 7.68054 14.8249 7.04738 14.4343 6.65685L8.07039 0.292893ZM7.36328 1L6.36328 1L6.36328 21H7.36328H8.36328L8.36328 1L7.36328 1Z" fill="currentColor"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- .c-loading -->
+    <div class="c-loading" role="status" id="js-loading">
+      <img class="c-loading__img" aria-hidden="true" src="images/loading.png" alt="" width="272" height="113">
+    </div>
+    <!-- /.c-loading -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
+    <script src="js/script.js" defer></script>
+  </body>
+</html>

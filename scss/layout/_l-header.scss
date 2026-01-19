@@ -1,0 +1,95 @@
+@use "../foundation/forward" as fwd;
+
+/*----------------------------------------
+	l-header
+----------------------------------------*/
+.l-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: var(--c_base);
+  z-index: 998;
+}
+
+.l-header__inner {
+  display: flex;
+  align-items: center;
+  max-width: 1366px;
+  margin: 0 auto; /* 左右中央揃え */
+  padding: 15px 20px;
+}
+
+.l-header__logo {
+  position: relative;
+  z-index: 999;
+}
+
+/* ハンバーガーメニュー */
+.l-header__hamburger {
+  position: relative;
+  margin-left: auto;
+  z-index: 999;
+}
+
+/* スマホ用メニュー */
+.l-header__spmenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  visibility: hidden;
+  overflow-y: auto;
+  transition: opacity 0.3s, visibility 0.3s;
+  z-index: 998;
+}
+
+.l-header__spmenu[aria-hidden="false"] {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* メインメニューは非表示 */
+.l-header__menu {
+  flex: 0;
+  display: none;
+}
+
+
+@media (min-width: 768px) {
+  .l-header__inner {
+    padding: 20px 35px;
+  }
+}
+
+@media (min-width: 992px) {
+  /* メインメニューを表示 */
+  .l-header__menu {
+    display: flex;
+    margin-left: auto;
+  }
+
+  /* スマホ用メニューは非表示 */
+  .l-header__spmenu {
+    display: none;
+  }
+
+  .l-header__hamburger {
+    display: none;
+  }
+}
+
+
+/*----------------------------------------
+	ハンバーガーメニューオープン
+----------------------------------------*/
+
+/* ハンバーガーメニューはSPレイアウト専用のため、 */
+/* 影響範囲を広げないためにメディアクエリで切る。 */
+@media (max-width: 991.9px) {
+  .l-header.is-menu-open {
+    position: fixed;
+
+  }
+}

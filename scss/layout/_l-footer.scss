@@ -1,0 +1,117 @@
+@use "../foundation/forward" as fwd;
+
+/*----------------------------------------
+	l-footer
+----------------------------------------*/
+.l-footer {
+  --c_accent: #4699ca;
+  --c_bg: #182848;
+  background: var(--c_bg);
+  color: var(--c_white);
+}
+
+.l-footer__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 81px;
+  width: calc((335 / 375) * 100%);
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.l-footer__menu-wrap,
+.l-footer__menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.l-footer__menu-wrap {
+  gap: 65px;
+}
+
+.l-footer__menu {
+  gap: 24px;
+  font-size: fwd.make-clamp(14, 16, 375, 768);
+  line-height: 1.2;
+}
+
+.l-footer__link {
+  @include fwd.hover-opacity();
+}
+
+.l-footer__logo {
+  width: 160px;
+}
+
+.l-footer__text-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1.143em;
+  margin-top: 24px;
+  font-size: fwd.make-clamp(14, 16, 375, 768);
+  line-height: 1.2;
+}
+
+.l-footer__copyright {
+  display: inline-block;
+  width: 100%;
+  padding: 1.6em calc((20 / 375) * 100%);
+  background: var(--c_base);
+  font-size: fwd.make-clamp(10, 12, 375, 768);
+}
+
+@media (min-width: 768px) {
+  .l-footer__inner {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: calc((1016 / 1366) * 100%);
+    max-width: 1016px;
+    padding: 85px 0 120px;
+  }
+
+  .l-footer__menu-wrap {
+    gap: 80px;
+  }
+
+  /* 長文が入ったら折り返すようにする（メニューへの緩衝防止） */
+  .l-footer__body {
+    max-width: 376px;
+  }
+
+  .l-footer__logo {
+    width: 241px;
+  }
+
+  .l-footer__text-wrap {
+    gap: 1.563em;
+    margin-top: 39px;
+  }
+
+  .l-footer__copyright {
+    padding: 2.083em calc((175 / 1336) * 100%);
+  }
+}
+
+@media (min-width: 992px) {
+  .l-footer__menu-wrap {
+    flex-direction: row;
+    margin-top: 98px;
+  }
+
+  .l-footer__menu {
+    flex-direction: column-reverse;
+    letter-spacing: 0.2em;
+    writing-mode: vertical-rl;
+  }
+
+  .l-footer__text-wrap {
+    letter-spacing: 0.02em;
+  }
+}
+
+@media (min-width: 1366px) {
+  .l-footer__copyright {
+    padding-right: calc((100vw - 1016px) / 2);
+    padding-left: calc((100vw - 1016px) / 2);
+  }
+}

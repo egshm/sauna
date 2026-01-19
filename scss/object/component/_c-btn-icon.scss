@@ -1,0 +1,34 @@
+@use "../../foundation/forward" as fwd;
+
+/*----------------------------------------
+  c-btn-icon
+----------------------------------------*/
+.c-btn-icon {
+  --c_bg: #956d30;
+  display: grid;
+  place-content: center; /* アイコンを中心に配置 */
+  width: 72px;
+  height: 72px;
+  background: var(--c_bg);
+  border-radius: 50%;
+  color: var(--c_white);
+  transition: background-color 0.3s,
+              color 0.3s,
+              transform 0.3s;
+}
+
+.c-btn-icon:focus-visible {
+  background: var(--c_base);
+  border: 2px solid currentColor;
+  color: var(--c_bg);
+  transform: scale(1.2);
+}
+
+@media (any-hover: hover) {
+  .c-btn-icon:hover {
+    background: var(--c_base);
+    border: 2px solid currentColor;
+    color: var(--c_bg);
+    transform: scale(1.2);
+  }
+}

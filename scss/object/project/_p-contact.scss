@@ -1,0 +1,72 @@
+@use "../../foundation/forward" as fwd;
+
+/*----------------------------------------
+  p-contact
+----------------------------------------*/
+.p-contact {
+  position: relative;
+  background-image: url('../images/contact.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.p-contact::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--c_mask);
+}
+
+.p-contact__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  position: relative;
+  width: calc((335 / 375) * 100%);
+  margin: 0 auto;
+  padding: 96px 0;
+  z-index: 1;
+}
+
+.p-contact__title {
+  --c_main: var(--c_white);
+  --c_sub: var(--c_white);
+  justify-content: center;
+}
+
+.p-contact__text {
+  color: var(--c_white);
+  line-height: 2;
+}
+
+.p-contact__btn {
+  --c_hover: #956d30; /* ホバー時のボタン色 */
+  justify-content: space-between;
+  width: 335px;
+  padding: 1.286em 1.714em;
+}
+
+@media (min-width: 768px) {
+  .p-contact {
+    background-position: center;
+  }
+
+  .p-contact__inner {
+    gap: 41px;
+    width: calc((1016 / 1366) * 100%);
+    max-width: 1016px;
+    padding: 80px 0;
+  }
+
+  .p-contact__text {
+    text-align: center;
+  }
+
+  .p-contact__btn {
+    justify-content: center;
+    width: 326px;
+    padding: 1.688em;
+  }
+}

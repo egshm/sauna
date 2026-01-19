@@ -1,0 +1,25 @@
+@use "../../foundation/forward" as fwd;
+
+/*----------------------------------------
+	c-logo
+----------------------------------------*/
+.c-logo {
+  width: 100px;
+  flex-shrink: 0;
+}
+
+.c-logo__link {
+  display: block;
+  transition: color 0.3s;
+  @include fwd.hover-opacity();
+}
+
+.c-logo__img {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .c-logo {
+    width: 136px;
+  }
+}

@@ -1,0 +1,65 @@
+@use "../../foundation/forward" as fwd;
+
+/*----------------------------------------
+  c-hamburger
+----------------------------------------*/
+.c-hamburger {
+  --gap_line: 5px; /* 線の間隔 */
+  --w_line: 20px; /* 線の幅 */
+  --h_line: 2px; /* 線の太さ */
+  --c_line: currentColor; /* 線の色 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: var(--w_line);
+  height: calc(var(--h_line) * 3 + var(--gap_line) * 2);
+  color: var(--c_white);
+  @include fwd.hover-opacity();
+}
+
+.c-hamburger[aria-expanded="true"] .c-hamburger__line::after {
+  transform: rotate(-45deg);
+}
+
+.c-hamburger[aria-expanded="true"] .c-hamburger__line {
+  background: transparent;
+}
+
+.c-hamburger[aria-expanded="true"] .c-hamburger__line::before {
+  transform: rotate(45deg);
+}
+
+.c-hamburger__line {
+  position: relative;
+  width: 100%;
+  height: var(--h_line);
+  background: var(--c_line);
+  transition: background-color 0.3s;
+}
+
+.c-hamburger__line::after,
+.c-hamburger__line::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: var(--h_line);
+  background-color: var(--c_line);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.c-hamburger__line::after {
+  transform: translateY(var(--gap_line));
+}
+
+.c-hamburger__line::before {
+  transform: translateY(calc(var(--gap_line) * -1));
+}
+
+@media (min-width: 768px) {
+  .c-hamburger {
+    --w_line: 32px;
+    --gap_line: 9px;
+  }
+}

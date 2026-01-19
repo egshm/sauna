@@ -1,0 +1,175 @@
+@use "../../foundation/forward" as fwd;
+
+/*----------------------------------------
+  p-page-top
+----------------------------------------*/
+.p-page-top {
+  overflow-x: hidden;
+}
+
+
+/*----------------------------------------
+  Services・Works・Recruit セクションの背景構造
+    - ビューポート幅いっぱいの色付き背景を作る。
+    - 色付き背景の上に白い平行四辺形を重ねる。
+----------------------------------------*/
+
+
+/*----------------------------------------
+  Services
+----------------------------------------*/
+.p-page-top__about {
+  --pd_top: 120px;
+  /* 背景上端位置のオフセット */
+  --offset: 0px;
+  /* 背景の上端位置 */
+  --top_bg: calc(var(--pd_top) - var(--offset));
+  /* 背景の高さ */
+  --h_bg: calc(100% - var(--pd_top));
+  /* 平行四辺形の幅 */
+  --w_para: 230px;
+  /* 平行四辺形の傾き角度 */
+  --ang_para: -25deg;
+  /* 平行四辺形の左端位置 */
+  --left_para: 260px;
+
+  padding-top: var(--pd_top);
+  @include fwd.background-parallelogram(
+    var(--top_bg),
+    var(--h_bg),
+    var(--w_para),
+    var(--ang_para),
+    var(--left_para),
+  );
+}
+
+@media (min-width: 768px) {
+  .p-page-top__about {
+    --pd_top: 200px;
+    --offset: 30px;
+    --w_para: 300px;
+    --ang_para: -40deg;
+    --left_para: calc((1100 / 1366) * 100%);
+  }
+}
+
+
+/*----------------------------------------
+  About
+----------------------------------------*/
+.p-page-top__access {
+  padding-top: 120px;
+}
+
+@media (min-width: 768px) {
+  .p-page-top__access {
+    padding-top: 160px;
+  }
+}
+
+
+/*----------------------------------------
+  Works
+----------------------------------------*/
+.p-page-top__sauna {
+  --pd_top: 120px;
+  /* 背景上端位置のオフセット */
+  --offset: 32px;
+  /* 背景の上端位置 */
+  --top_bg: calc(var(--pd_top) - var(--offset));
+  /* 背景の高さ */
+  --h_bg: calc(100% - var(--pd_top) + var(--offset));
+  /* 平行四辺形の幅 */
+  --w_para: 680px;
+  /* 平行四辺形の最大幅 */
+  --w_para-max: 1350px;
+  /* 平行四辺形の傾き角度 */
+  --ang_para: -25deg;
+  /* 平行四辺形の左端位置 */
+  --left_para: -150px;
+
+  padding-top: var(--pd_top);
+  @include fwd.background-parallelogram(
+    var(--top_bg),
+    var(--h_bg),
+    var(--w_para),
+    var(--ang_para),
+    var(--left_para),
+    var(--w_para-max)
+  );
+}
+
+@media (min-width: 768px) {
+  .p-page-top__sauna {
+    --pd_top: 160px;
+    --offset: 0px;
+    --w_para: calc((1350 / 1366) * 100%);
+    --ang_para: 40deg;
+    --left_para: 0px;
+  }
+}
+
+@media (min-width: 1366px) {
+  .p-page-top__sauna {
+    --left_para: calc((100vw - 1366px) / 2);
+  }
+}
+
+
+/*----------------------------------------
+  Recruit
+----------------------------------------*/
+
+/* SPレイアウト時のみ平行四辺形の背景を描画 */
+@media (max-width: 767.9px) {
+  .p-page-top__reservation {
+    --pd_top: 120px;
+    /* 背景上端位置のオフセット */
+    --offset: calc((32 + 32) * -1px); /* タイトル高さ+画像リストの上マージン */
+    /* 背景の上端位置 */
+    --top_bg: calc(var(--pd_top) - var(--offset));
+    /* 背景の高さ */
+    --h_bg: calc(100% - var(--pd_top) + var(--offset));
+    /* 平行四辺形の幅 */
+    --w_para: 600px;
+    /* 平行四辺形の傾き角度 */
+    --ang_para: 40deg;
+    /* 平行四辺形の左端位置 */
+    --left_para: 130px;
+
+    padding-top: var(--pd_top);
+    @include fwd.background-parallelogram(
+      var(--top_bg),
+      var(--h_bg),
+      var(--w_para),
+      var(--ang_para),
+      var(--left_para)
+    );
+  }
+}
+
+@media (min-width: 768px) {
+  .p-page-top__reservation {
+    padding: 80px 0;
+    margin-top: 160px;
+  }
+}
+
+
+/*----------------------------------------
+  トップへ戻るボタン
+----------------------------------------*/
+.p-page-top__btn {
+  position: fixed;
+  right: calc((20 / 375) * 100%);
+  bottom: calc((20 / 375) * 100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  z-index: 997;
+}
+
+.p-page-top__btn.is-active {
+  opacity: 1;
+  visibility: visible;
+}

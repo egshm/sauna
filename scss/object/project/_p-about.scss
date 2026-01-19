@@ -1,0 +1,98 @@
+@use "../../foundation/forward" as fwd;
+
+/*----------------------------------------
+  p-about
+----------------------------------------*/
+.p-about__text-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.667em;
+  font-size: var(--fz_24);
+  font-weight: 700;
+}
+
+.p-about__text-sub {
+  font-size: var(--fz_14);
+  line-height: 2;
+}
+
+.p-about__body {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+
+/* SPレイアウト */
+@media (max-width: 767.9px) {
+  .p-about__inner {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 40px;
+    position: relative;
+    width: calc((335 / 375) * 100%);
+    max-width: 620px;
+    margin: 0 auto;
+  }
+
+  .p-about__img-wrap {
+    display: flex;
+    justify-content: center;
+    width: 100vw; /* ビューポート幅いっぱいに広げる */
+    height: 248px;
+    margin-left: calc(50% - 50vw); /* ビューポート幅いっぱいに広げる */
+  }
+
+  .p-about__img {
+    max-width: 620px;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .p-about__body {
+    padding-bottom: 48px;
+  }
+
+  .p-about__btn {
+    margin: 0 auto;
+  }
+}
+
+/* PCレイアウト */
+@media (min-width: 768px) {
+  .p-about__inner {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: calc((48 / 1191) * 100%);
+    width: calc((1191 / 1366) * 100%);
+    max-width: 1191px;
+    margin-right: auto;
+  }
+
+  .p-about__img-wrap {
+    flex: 0 0 calc((620 / 1191) * 100%);
+  }
+
+  .p-about__body {
+    flex: 1;
+  }
+
+  .p-about__text-sub {
+    font-size: fwd.make-clamp(14, 16, 768, 1366);
+  }
+}
+
+@media (min-width: 1366px) {
+  .p-about__inner {
+    margin-left: auto;
+    transform: translateX(calc(((1366 - 1191) / 2)) * (-1px));
+  }
+  .p-about__text-main {
+    margin-top: 8px;
+  }
+
+  .p-about__btn {
+    margin-top: 8px;
+  }
+}

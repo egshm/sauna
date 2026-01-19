@@ -1,0 +1,24 @@
+/// 
+/// @function make-clamp
+/// 
+/// 指定された最小・最大のサイズおよびビューポート幅を使って、CSSのclamp()式を生成する。
+/// 
+/// Note: $unit以外の引数はすべてpx単位で指定すること
+/// 
+/// @param {Number} $min - 最小サイズ(px単位)
+/// @param {Number} $max - 最大サイズ(px単位)
+/// @param {Number} $min-vw - 最小ビューポート幅(px単位)
+/// @param {Number} $max-vw - 最大ビューポート幅(px単位)
+/// @param {String} $unit - 出力単位("rem" または "px")
+///
+@function make-clamp($min, $max, $min-vw, $max-vw, $unit: "rem") {
+  $rel: ($max - $min) / ($max-vw - $min-vw);
+  $abs: $min - $min-vw * $rel;
+
+  @if $unit == "rem" {
+    @return clamp(#{$min / 16}rem, #{$abs / 16}rem + #{$rel * 100}vw, #{$max / 16}rem);
+  }
+  @else {
+    @return clamp(#{$min}px, #{$abs}px + #{$rel * 100}vw, #{$max}px);
+  }
+}

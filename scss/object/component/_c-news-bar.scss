@@ -1,0 +1,114 @@
+@use "../../foundation/forward" as fwd;
+
+/*----------------------------------------
+  c-news-bar
+----------------------------------------*/
+.c-news-bar {
+  --c_bg: var(--c_base);
+  --c_focus: #4699ca;
+  font-size: fwd.make-clamp(14, 16, 375, 768);
+  transition: border-color 0.3s;
+  @include fwd.underline-anim(".c-news-bar__text > span", 2px);
+}
+
+.c-news-bar__label {
+  padding: 0.5em 1.6em 0.5em 1em;
+  background: var(--c_bg);
+  color: var(--c_white);
+  clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%);
+  text-transform: uppercase;
+}
+
+.c-news-bar__body {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 1em 0.6em;
+  background: var(--c_white);
+}
+
+.c-news-bar__date {
+  flex-shrink: 0;
+}
+
+.c-news-bar__text {
+  line-height: 1.5;
+}
+
+.c-news-bar__category {
+  flex-shrink: 0;
+  padding: 0.4em 0.7em;
+  background: var(--c_accent);
+  border-radius: 10px;
+  color: var(--c_white);
+  font-size: var(--fz_12);
+}
+
+/* SP時は右矢印アイコンを非表示 */
+.c-news-bar__arrow-wrap {
+  display: none;
+}
+
+
+@media (max-width: 767.9px) {
+  .c-news-bar__body {
+    transition: border-color 0.3s;
+  }
+
+  .c-news-bar:focus-visible .c-news-bar__body {
+    border: 2px solid var(--c_focus);
+  }
+}
+
+
+@media (min-width: 768px) {
+  .c-news-bar {
+    display: flex;
+    align-items: center;
+    background: var(--c_bg);
+  }
+
+  .c-news-bar:focus-visible {
+    border: 2px solid var(--c_focus);
+  }
+
+  .c-news-bar__label {
+    padding-right: 4em;
+    padding-left: 2.5em;
+    clip-path: none;
+    font-weight: 500;
+  }
+
+  .c-news-bar__body {
+    position: relative;
+    padding: 1.125em 1.5em;
+    background: transparent;
+    z-index: 1;
+  }
+
+  .c-news-bar__body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: var(--c_white);
+    transform: skewX(-30deg);
+    z-index: -1;
+  }
+
+  .c-news-bar__arrow-wrap {
+    display: grid;
+    place-content: center; /* 右矢印アイコンを中央揃え */
+    padding-right: 30px;
+    padding-left: 20px;
+  }
+
+  /* 右矢印アイコン */
+  .c-news-bar__arrow {
+    width: 17px;
+  }
+}
+

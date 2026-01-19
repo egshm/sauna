@@ -1,0 +1,181 @@
+@use "../../foundation/forward" as fwd;
+
+/*----------------------------------------
+	p-sauna
+----------------------------------------*/
+.p-sauna {
+  --h_img: 240px; /* 画像高さ */
+  --c_shadow: rgba(25, 25, 25, 0.25);
+  --c_num: #182848;
+}
+
+.p-sauna__inner {
+  width: calc((335 / 375) * 100%);
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.p-sauna__img-wrap {
+  max-height: var(--h_img);
+}
+
+.p-sauna__img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.p-sauna__btn {
+  margin: 40px auto 0;
+}
+
+.p-sauna__text-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7em;
+  margin-top: 32px;
+  font-size: var(--fz_24);
+  font-weight: 700;
+}
+
+.p-sauna__text-sub {
+  margin-top: 32px;
+  font-size: var(--fz_14);
+  line-height: 2;
+}
+
+.p-sauna__number {
+  position: absolute;
+  padding: 0.6em 1em;
+  background: var(--c_num);
+  color: var(--c_white);
+  font-family: var(--font_lato);
+  font-size: var(--fz_20);
+  font-weight: 500;
+  z-index: 1;
+}
+
+.p-sauna__list {
+  margin-top: 40px;
+}
+
+.p-sauna__item {
+  position: relative;
+}
+
+.p-sauna__item-title {
+  color: var(--c_accent);
+  font-size: var(--fz_20);
+  font-weight: 700;
+}
+
+.p-sauna__item-text {
+  margin-top: 24px;
+  line-height: 2;
+  font-size: var(--fz_14);
+}
+
+
+/* SPレイアウト */
+@media (max-width: 767.9px) {
+  .p-sauna__inner {
+    padding-bottom: 40px;
+  }
+
+  .p-sauna__item + .p-sauna__item {
+    margin-top: 40px;
+  }
+
+  .p-sauna__item {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 24px;
+  }
+
+  /* 番号を画像の左下に配置 */
+  .p-sauna__number {
+    /* 2.2em = 1em（テキスト高さ） + 0.6em * 2（上下パディング） */
+    top: calc(var(--h_img) - 2.2em);
+    /* 310px = 620px / 2 */
+    left: calc(50% - min(50vw, 310px));
+  }
+
+  .p-sauna__img-wrap {
+    display: flex;
+    justify-content: center; /* 画像が620pxに達した場合、中央揃え */
+    width: 100vw; /* 画像をビューポートいっぱいに表示 */
+    height: var(--h_img);
+    margin-left: calc(50% - 50vw);
+  }
+
+  .p-sauna__img {
+    max-width: 620px;
+  }
+}
+
+
+/* PCレイアウト */
+@media (min-width: 768px) {
+  .p-sauna__inner {
+    width: calc((1016 / 1366) * 100%);
+    max-width: 1016px;
+    text-align: center;
+  }
+
+  .p-sauna__title {
+    justify-content: center; /* タイトルを中央揃え */
+  }
+
+  .p-sauna__text-main {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 0;
+    margin-top: 40px;
+  }
+
+  .p-sauna__text-sub {
+    margin: 40px auto 0;
+    font-size: fwd.make-clamp(14, 16, 768, 1336);
+  }
+
+  .p-sauna__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Gridアイテムを2列表示 */
+    gap: calc((72 / 1016) * 100%);
+    margin-top: 57px;
+  }
+
+  .p-sauna__item {
+    display: grid;
+    grid-template-rows: auto 1fr; /* Gridアイテム間で要素（画像・テキスト）の高さを揃える */
+    box-shadow: 0px 0px 10px 0px var(--c_shadow);
+  }
+
+  .p-sauna__img-wrap {
+    order: -1; /* 画像とテキストの並び順を反転 */
+  }
+
+  .p-sauna__item-title {
+    font-size: fwd.make-clamp(20, 24, 768, 1366);
+  }
+
+  .p-sauna__item-text {
+    margin-top: 32px;
+    font-size: fwd.make-clamp(14, 16, 768, 1366);
+  }
+
+  .p-sauna__body {
+    padding: 2em 1.5em;
+    background: var(--c_white);
+    text-align: left;
+  }
+
+  /* 番号を画像の左上に配置 */
+  .p-sauna__number {
+    top: 0;
+    left: 0;
+    padding: 0.792em 0.583em;
+    font-size: fwd.make-clamp(20, 24, 768, 1366);
+    transform: translate(-50%, -50%);
+  }
+}

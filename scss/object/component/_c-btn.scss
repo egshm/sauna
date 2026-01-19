@@ -1,0 +1,52 @@
+@use "../../foundation/forward" as fwd;
+
+/*----------------------------------------
+	c-btn
+----------------------------------------*/
+.c-btn {
+  --c_hover: var(--c_base); /* ホバー時のボタンカラー */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.286em;
+  width: 256px;
+  max-width: 100%;
+  padding: 1.143em;
+  background: var(--c_btn);
+  box-shadow: 0px 2px 4px 0px var(--c_shadow);
+  color: var(--c_white);
+  font-family: var(--ff_lato);
+  font-size: var(--fz_14);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1.2;
+  transition: background-color 0.3s;
+  text-transform: uppercase;
+  @include fwd.underline-anim(".c-btn__text");
+}
+
+.c-btn:focus-visible {
+  background: var(--c_hover);
+}
+
+.c-btn__icon {
+  width: 1.429em;
+}
+
+.c-btn__arrow {
+  width: 1.286em;
+}
+
+
+@media (min-width: 768px) {
+  .c-btn {
+    font-size: fwd.make-clamp(14, 16, 768, 1366)
+  }
+}
+
+/* ホバー可能時 */
+@media (any-hover: hover) {
+  .c-btn:hover {
+    background: var(--c_hover);
+  }
+}

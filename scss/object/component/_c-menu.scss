@@ -1,0 +1,99 @@
+@use "../../foundation/forward" as fwd;
+
+/*----------------------------------------
+  c-menu
+----------------------------------------*/
+.c-menu {
+  --c_accent: #4699ca;
+  color: var(--c_white);
+}
+
+.c-menu__item {
+  transition: color 0.3s;
+}
+
+/* スクロールが該当セクションに到達したとき */
+.c-menu__item.is-scroll-spy {
+  color: var(--c_accent);
+  font-weight: 500;
+}
+
+.c-menu__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  white-space: nowrap;
+  @include fwd.hover-opacity();
+}
+
+.c-menu__text-sub {
+  margin-top: 0.5em;
+  font-family: var(--ff_lato);
+}
+
+/* SPレイアウト */
+@media (max-width: 991.9px) {
+  .c-menu {
+    padding-top: 136px;
+    padding-bottom: 80px;
+    background: var(--c_base);
+  }
+
+  /* メインメニューがスクロールされているとき、  */
+  /* 上にスクロールされていったメニューたちを隠す */
+  .c-menu::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100px;
+    background: var(--c_base);
+    pointer-events: none;
+  }
+
+  .c-menu__item {
+    width: fit-content;
+    margin: 0 auto;
+  }
+
+  .c-menu__item + .c-menu__item {
+    margin-top: 40px;
+  }
+
+  .c-menu__text-main {
+    font-size: var(--fz_20);
+  }
+
+  .c-menu__text-sub {
+    font-size: var(--fz_14);
+  }
+}
+
+/* PCレイアウト */
+@media (min-width: 992px) {
+  .c-menu__list {
+    display: flex;
+    align-items: center;
+  }
+
+  .c-menu__item + .c-menu__item {
+    position: relative;
+    padding-left: 2em;
+  }
+
+  /* スラッシュ */
+  .c-menu__item + .c-menu__item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 1em;
+    width: 1px;
+    height: 1.5em;
+    background: currentColor;
+    transform: rotate(30deg);
+  }
+
+  .c-menu__text-sub {
+    font-size: var(--fz_10);
+  }
+}

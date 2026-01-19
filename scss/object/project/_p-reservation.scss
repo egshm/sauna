@@ -1,0 +1,144 @@
+@use "../../foundation/forward" as fwd;
+
+/*----------------------------------------
+  p-reservation
+----------------------------------------*/
+.p-reservation {
+  --c_text-bg: rgba(24, 40, 72, 0.8);
+}
+
+.p-reservation__title {
+  width: calc((335 / 375) * 100%);
+  margin: 0 auto;
+}
+
+.p-reservation__list {
+  margin-top: 32px;
+}
+
+.p-reservation__item {
+  position: relative;
+  max-width: 425px;
+}
+
+.p-reservation__link {
+  display: block;
+  height: 100%;
+  overflow: hidden;
+  @include fwd.underline-anim(".p-reservation__text > span");
+}
+
+.p-reservation__link:focus-visible .p-reservation__img {
+    transform: scale(1.1);
+}
+
+.p-reservation__img-wrap {
+  height: 100%;
+}
+
+.p-reservation__img {
+  aspect-ratio: 375 / 250;
+  object-fit: cover;
+  /* ホバー・フォーカスアニメーション用 */
+  transition: transform 0.6s;
+}
+
+.p-reservation__text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* テキストと矢印アイコンを両サイドへ */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200px;
+  padding: 1.25em 1em;
+  background: var(--c_text-bg);
+  color: var(--c_white);
+  font-family: var(--ff_lato);
+  line-height: 1.2;
+  z-index: 1;
+}
+
+.p-reservation__arrow {
+  width: 1.125em;
+}
+
+.p-reservation__btn {
+  margin: 0 auto;
+}
+
+@media (max-width: 767.9px) {
+  .p-reservation__list {
+    padding-bottom: 120px;
+  }
+
+  .p-reservation__item:nth-child(2) {
+    margin: 0 auto; /* 中央寄せ */
+  }
+  
+  .p-reservation__item:nth-child(3) {
+    margin-left: auto; /* 右寄せ */
+  }
+}
+
+@media (min-width: 768px) {
+  .p-reservation {
+    background: var(--c_bg);
+  }
+
+  .p-reservation__title {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .p-reservation__list {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 56px;
+  }
+
+  .p-reservation__item {
+    max-width: 312px;
+  }
+
+  .p-reservation__btn-wrap {
+    padding-top: 80px;
+  }
+
+  .p-reservation__text {
+    left: 50%;
+    transform: translate(-50%, 50%);
+  }
+}
+
+@media (min-width: 992px) {
+  .p-reservation__inner {
+    width: calc((1016 / 1366) * 100%);
+    max-width: 1016px;
+    margin: 0 auto;
+  }
+
+  .p-reservation__item:nth-child(1) {
+    margin-top: 80px;
+  }
+
+  .p-reservation__item:nth-child(2) {
+    margin-top: 40px;
+  }
+}
+
+@media (min-width: 1366px) {
+  .p-reservation__text {
+    left: auto;
+    right: -8px;
+    transform: translateY(50%);
+  }
+}
+
+/* ホバー可能時 */
+@media (any-hover: hover) {
+  .p-reservation__link:hover .p-reservation__img {
+      transform: scale(1.1);
+  }
+}
