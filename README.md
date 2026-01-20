@@ -8,6 +8,9 @@
 ## デザインツール
 - Photoshop
 
+## サイト構成
+トップページのみ
+
 ## 使用技術
 - HTML5
 - CSS / Sass (Dart Sass)
