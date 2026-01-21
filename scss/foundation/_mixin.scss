@@ -18,7 +18,7 @@
     opacity: $opacity;
   }
 
-  // ホバー時
+  // ホバー可能時
   @media (any-hover: hover) {
     &:hover {
       opacity: $opacity;
@@ -68,7 +68,7 @@
     background-size: 100% $line-width;
   }
 
-  /* ホバー可能時 */
+  // ホバー可能時
   @media (any-hover: hover) {
     &:hover#{$combinator}#{$target} {
       background-size: 100% $line-width;

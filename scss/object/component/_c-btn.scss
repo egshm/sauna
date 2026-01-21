@@ -44,8 +44,7 @@
   }
 }
 
-/* ホバー可能時 */
-@media (any-hover: hover) {
+@media (any-hover: hover) { /* ホバー可能時 */
   .c-btn:hover {
     background: var(--c_hover);
   }
