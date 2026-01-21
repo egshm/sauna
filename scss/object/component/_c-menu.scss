@@ -53,7 +53,8 @@
 
   .c-menu__item {
     width: fit-content;
-    margin: 0 auto;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .c-menu__item + .c-menu__item {

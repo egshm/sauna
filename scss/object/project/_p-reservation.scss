@@ -9,7 +9,8 @@
 
 .p-reservation__title {
   width: calc((335 / 375) * 100%);
-  margin: 0 auto;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .p-reservation__list {
@@ -64,7 +65,8 @@
 }
 
 .p-reservation__btn {
-  margin: 0 auto;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 @media (max-width: 767.9px) {
@@ -73,7 +75,9 @@
   }
 
   .p-reservation__item:nth-child(2) {
-    margin: 0 auto; /* 中央寄せ */
+    /* 中央寄せ */
+    margin-right: auto;
+    margin-left: auto;
   }
   
   .p-reservation__item:nth-child(3) {
@@ -116,7 +120,8 @@
   .p-reservation__inner {
     width: calc((1016 / 1366) * 100%);
     max-width: 1016px;
-    margin: 0 auto;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .p-reservation__item:nth-child(1) {

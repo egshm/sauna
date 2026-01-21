@@ -36,11 +36,13 @@
     gap: 40px;
     width: calc((335 / 375) * 100%);
     max-width: 620px;
-    margin: 0 auto;
+    margin-right: auto;
+    margin-left: auto;
   }
         
   .p-access__btn {
-    margin: 0 auto;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .p-access__bg {

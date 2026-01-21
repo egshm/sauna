@@ -49,7 +49,8 @@
   left: 0;  /* インナー中央寄せ */
   width: calc((335 / 375) * 100%);
   height: 100%;
-  margin: 0 auto; /* インナー中央寄せ */
+  margin-right: auto; /* インナー中央寄せ */
+  margin-left: auto;  /* インナー中央寄せ */
   padding-bottom: 26px;
   z-index: 2;
 }

@@ -25,8 +25,10 @@
   gap: 32px;
   position: relative;
   width: calc((335 / 375) * 100%);
-  margin: 0 auto;
-  padding: 96px 0;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 96px;
+  padding-bottom: 96px;
   z-index: 1;
 }
 
@@ -57,7 +59,8 @@
     gap: 41px;
     width: calc((1016 / 1366) * 100%);
     max-width: 1016px;
-    padding: 80px 0;
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
 
   .p-contact__text {

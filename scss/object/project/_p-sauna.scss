@@ -12,7 +12,8 @@
 .p-sauna__inner {
   width: calc((335 / 375) * 100%);
   max-width: 620px;
-  margin: 0 auto;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .p-sauna__img-wrap {
@@ -25,7 +26,9 @@
 }
 
 .p-sauna__btn {
-  margin: 40px auto 0;
+  margin-top: 40px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .p-sauna__text-main {
@@ -134,7 +137,9 @@
   }
 
   .p-sauna__text-sub {
-    margin: 40px auto 0;
+    margin-top: 40px;
+    margin-right: auto;
+    margin-left: auto;
     font-size: fwd.make-clamp(14, 16, 768, 1336);
   }
 

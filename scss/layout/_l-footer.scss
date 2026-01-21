@@ -15,8 +15,10 @@
   flex-direction: column;
   gap: 81px;
   width: calc((335 / 375) * 100%);
-  margin: 0 auto;
-  padding: 40px 0;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .l-footer__menu-wrap,
@@ -66,7 +68,8 @@
     justify-content: space-between;
     width: calc((1016 / 1366) * 100%);
     max-width: 1016px;
-    padding: 85px 0 120px;
+    padding-top: 85px;
+    padding-bottom: 120px;
   }
 
   .l-footer__menu-wrap {
