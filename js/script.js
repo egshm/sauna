@@ -87,15 +87,6 @@ spmenuLinks.forEach(link => {
 });
 
 
-// ふわっと表示
-//--------------------------------------------
-$(".js-inview").on("inview", function (event, isInView) {
-  if (isInView) {
-    $(this).stop().addClass("is-show");
-  }
-});
-
-
 // スクロールスパイ
 //--------------------------------------------
 
