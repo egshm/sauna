@@ -15,7 +15,6 @@
   background: var(--c_btn);
   box-shadow: 0px 2px 4px 0px var(--c_shadow);
   color: var(--c_white);
-  font-family: var(--ff_lato);
   font-size: var(--fz_14);
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -35,6 +34,10 @@
 
 .c-btn__arrow {
   width: 1.286em;
+}
+
+.c-btn__text {
+  font-family: var(--ff_lato);
 }
 
 

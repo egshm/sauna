@@ -6,12 +6,14 @@
     <meta name="description" content="KOHAN SAUNAは、フィンランド式の薪サウナを湖畔に構え、自然と静けさの中で“ととのう”体験を提供しています。">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KOHAN SAUNA</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+JP:wght@100..900&display=swap">
+    <link rel="preload" href="fonts/lato-v25-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/lato-v25-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" as="style" href="css/font.min.css">
+    <link rel="stylesheet" href="css/font.min.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.min.css">
     <link rel="icon" href="images/favicon.png" type="img/png">
+    <noscript><link rel="stylesheet" href="css/font.min.css"></noscript>
   </head>
   <body>
     <!-- スクリーンリーダ用のローディング画面テキスト -->
@@ -25,7 +27,25 @@
         <!-- .c-logo -->
         <p class="c-logo l-header__logo">
           <a href="index.html" class="c-logo__link">
-            <img class="c-logo__img js-logo" src="images/logo.png" alt="KOHAN SAUNAのロゴ | トップページを開く" width="100" height="41">
+            <picture>
+              <source
+                srcset="images/logo.webp"
+                type="image/webp"
+              >
+              <source
+                srcset="images/logo.png"
+              >
+              <img
+                fetchpriority="high"
+                class="c-logo__img js-logo"
+                src="images/logo.png"
+                alt="KOHAN SAUNAのロゴ | トップページを開く"
+                width="100"
+                height="41"
+                decoding="async"
+                loading="eager"
+              >
+            </picture>
           </a>
         </p>
         <!-- /.c-logo -->
@@ -131,13 +151,90 @@
       <div class="p-first-view p-page-top__first-view js-scrollSpy" id="js-firstView">
         <ul class="p-first-view__slider" aria-hidden="true" id="js-fvSlider">
           <li class="p-first-view__slide">
-            <img class="p-first-view__img" src="images/fv.jpg" alt="" width="375" height="611">
+            <picture>
+              <source
+                srcset="images/fv_sp.webp"
+                type="image/webp"
+                media="(max-width: 767.9px)"
+              >
+              <source
+                srcset="images/fv_sp.jpg"
+                media="(max-width: 767.9px)"
+              >
+              <source
+                srcset="images/fv.webp"
+                type="image/webp"
+              >
+              <source
+                srcset="images/fv.jpg"
+              >
+              <img
+                fetchpriority="high"
+                class="p-first-view__img"
+                src="images/fv.jpg"
+                alt=""
+                width="375"
+                height="611"
+                decoding="async"
+                loading="eager"
+              >
+            </picture>
           </li>
           <li class="p-first-view__slide">
-            <img class="p-first-view__img" src="images/fv-02.jpg" alt="" width="375" height="611">
+            <picture>
+              <source
+                srcset="images/fv-02_sp.webp"
+                type="image/webp"
+                media="(max-width: 767.9px)"
+              >
+              <source
+                srcset="images/fv-02_sp.jpg"
+                media="(max-width: 767.9px)"
+              >
+              <source
+                srcset="images/fv-02.webp"
+                type="image/webp"
+              >
+              <source
+                srcset="images/fv-02.jpg"
+              >
+              <img
+                class="p-first-view__img"
+                src="images/fv-02.jpg"
+                alt=""
+                width="375"
+                height="611"
+                loading="lazy"
+              >
+            </picture>
           </li>
           <li class="p-first-view__slide">
-            <img class="p-first-view__img" src="images/fv-03.jpg" alt="" width="375" height="611">
+            <picture>
+              <source
+                srcset="images/fv-03_sp.webp"
+                type="image/webp"
+                media="(max-width: 767.9px)"
+              >
+              <source
+                srcset="images/fv-03_sp.jpg"
+                media="(max-width: 767.9px)"
+              >
+              <source
+                srcset="images/fv-03.webp"
+                type="image/webp"
+              >
+              <source
+                srcset="images/fv-03.jpg"
+              >
+              <img
+                class="p-first-view__img"
+                src="images/fv-03.jpg"
+                alt=""
+                width="375"
+                height="611"
+                loading="lazy"
+              >
+            </picture>
           </li>
         </ul>
         <div class="p-first-view__inner">
@@ -200,7 +297,31 @@
             <!-- /.c-btn -->
           </div>
           <figure class="p-about__img-wrap">
-            <img src="images/about.jpg" alt="" class="p-about__img" width="375" height="248">
+            <picture>
+              <source
+                srcset="images/about_sp.webp"
+                type="image/webp"
+                media="(max-width: 767.9px)"
+              >
+              <source
+                srcset="images/about_sp.jpg"
+                media="(max-width: 767.9px)"
+              >  
+              <source
+                srcset="images/about.webp"
+                type="image/webp"
+              >
+              <source
+                srcset="images/about.jpg"
+              >  
+              <img
+                src="images/about.jpg"
+                alt="" class="p-about__img"
+                width="375"
+                height="248"
+                loading="lazy"
+              >
+            </picture>
           </figure>
         </div>
       </section>
@@ -239,7 +360,32 @@
                 </p>
               </div>
               <figure class="p-sauna__img-wrap">
-                <img src="images/sauna.jpg" alt="" class="p-sauna__img" width="375" height="160">
+                <picture>
+                  <source
+                    srcset="images/sauna_sp.webp"
+                    type="image/webp"
+                    media="(max-width: 767.9px)"
+                  >
+                  <source
+                    srcset="images/sauna_sp.jpg"
+                    media="(max-width: 767.9px)"
+                  >  
+                  <source
+                    srcset="images/sauna.webp"
+                    type="image/webp"
+                  >
+                  <source
+                    srcset="images/sauna.jpg"
+                  >  
+                  <img
+                    src="images/sauna.jpg"
+                    alt=""
+                    class="p-sauna__img"
+                    width="375"
+                    height="160"
+                    loading="lazy"
+                  >
+                </picture>
               </figure>
             </li>
             <li class="p-sauna__item">
@@ -255,7 +401,32 @@
                 </p>
               </div>
               <figure class="p-sauna__img-wrap">
-                <img src="images/sauna-02.jpg" alt="" class="p-sauna__img" width="375" height="160">
+                <picture>
+                  <source
+                    srcset="images/sauna-02_sp.webp"
+                    type="image/webp"
+                    media="(max-width: 767.9px)"
+                  >
+                  <source
+                    srcset="images/sauna-02_sp.jpg"
+                    media="(max-width: 767.9px)"
+                  >  
+                  <source
+                    srcset="images/sauna-02.webp"
+                    type="image/webp"
+                  >
+                  <source
+                    srcset="images/sauna-02.jpg"
+                  >  
+                  <img
+                    src="images/sauna-02.jpg"
+                    alt=""
+                    class="p-sauna__img"
+                    width="375"
+                    height="160"
+                    loading="lazy"
+                  >
+                </picture>
               </figure>
             </li>
           </ul>
@@ -298,7 +469,25 @@
               </div>
             </div>
           </div>
-          <div class="p-access__bg" aria-hidden="true"></div>
+          <figure class="p-access__bg-wrap" aria-hidden="true">
+            <picture>
+              <source
+                srcset="images/access-bg.webp"
+                type="image/webp"
+              >
+              <source
+                srcset="images/access-bg.jpg"
+              >  
+              <img
+                src="images/access-bg.jpg"
+                alt=""
+                class="p-access__bg"
+                width="1366"
+                height="656"
+                loading="lazy"
+              >
+            </picture>
+          </figure>
         </div>
       </section>
       <!-- /.p-access -->
@@ -322,7 +511,23 @@
                   </svg>
                 </p>
                 <figure class="p-reservation__img-wrap">
-                  <img src="images/reservation.jpg" alt="" class="p-reservation__img" width="375" height="200">
+                  <picture>
+                    <source
+                      srcset="images/reservation.webp"
+                      type="image/webp"
+                    >
+                    <source
+                      srcset="images/reservation.jpg"
+                    >  
+                    <img
+                      src="images/reservation.jpg"
+                      alt=""
+                      class="p-reservation__img"
+                      width="375"
+                      height="200"
+                      loading="lazy"
+                    >
+                  </picture>
                 </figure>
               </a>
             </li>
@@ -335,7 +540,23 @@
                   </svg>
                 </p>
                 <figure class="p-reservation__img-wrap">
-                  <img src="images/reservation-02.jpg" alt="" class="p-reservation__img" width="375" height="200">
+                  <picture>
+                    <source
+                      srcset="images/reservation-02.webp"
+                      type="image/webp"
+                    >
+                    <source
+                      srcset="images/reservation-02.jpg"
+                    >  
+                    <img
+                      src="images/reservation-02.jpg"
+                      alt=""
+                      class="p-reservation__img"
+                      width="375"
+                      height="200"
+                      loading="lazy"
+                    >
+                  </picture>
                 </figure>
               </a>
             </li>
@@ -348,7 +569,22 @@
                   </svg>
                 </p>
                 <figure class="p-reservation__img-wrap">
-                  <img src="images/reservation-03.jpg" alt="" class="p-reservation__img" width="375" height="200">
+                  <picture>
+                    <source
+                      srcset="images/reservation-03.webp"
+                      type="image/webp"
+                    >
+                    <source
+                      srcset="images/reservation-03.jpg"
+                    >  
+                    <img
+                      src="images/reservation-03.jpg"
+                      alt="" class="p-reservation__img"
+                      width="375"
+                      height="200"
+                      loading="lazy"
+                    >
+                  </picture>
                 </figure>
               </a>
             </li>
@@ -381,6 +617,33 @@
             <!-- /.c-btn -->
           </div>
         </div>
+        <figure class="p-contact__img-wrap">
+          <picture>
+            <source
+              srcset="images/contact_sp.webp"
+              type="image/webp"
+              media="(max-width: 767.9px)"
+            >
+            <source
+              srcset="images/contact_sp.jpg"
+              media="(max-width: 767.9px)"
+            >  
+            <source
+              srcset="images/contact.webp"
+              type="image/webp"
+            >
+            <source
+              srcset="images/contact.jpg"
+            >  
+            <img
+              src="images/contact.jpg"
+              alt="" class="p-contact__img"
+              width="1366"
+              height="427"
+              loading="lazy"
+            >
+          </picture>
+        </figure>
       </section>
       <!-- /.p-contact -->
     </main>
@@ -417,7 +680,23 @@
           <!-- .c-logo -->
           <p class="c-logo l-footer__logo">
             <a href="index.html" class="c-logo__link">
-              <img class="c-logo__img js-logo" src="images/logo.png" alt="KOHAN SAUNAのロゴ | トップページを開く" width="160" height="66">
+              <picture>
+                <source
+                  srcset="images/logo.webp"
+                  type="image/webp"
+                >
+                <source
+                  srcset="images/logo.png"
+                >  
+                <img
+                  class="c-logo__img js-logo"
+                  src="images/logo.png"
+                  alt="KOHAN SAUNAのロゴ | トップページを開く"
+                  width="160"
+                  height="66"
+                  loading="lazy"
+                >
+              </picture>
             </a>
           </p>
           <!-- /.c-logo -->
@@ -444,12 +723,28 @@
 
     <!-- .c-loading -->
     <div class="c-loading" role="status" id="js-loading">
-      <img class="c-loading__img" aria-hidden="true" src="images/loading.png" alt="" width="272" height="113">
+      <picture>
+        <source
+          srcset="images/loading.webp"
+          type="image/webp"
+        >
+        <source
+          srcset="images/loading.png"
+        >
+        <img
+          class="c-loading__img"
+          aria-hidden="true"
+          src="images/loading.png"
+          alt=""
+          width="272"
+          height="113"
+        >
+      </picture>
     </div>
     <!-- /.c-loading -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
-    <script src="js/script.js" defer></script>
+    <script src="js/script.min.js" defer></script>
   </body>
 </html>

@@ -51,7 +51,7 @@
   padding: 0.6em 1em;
   background: var(--c_num);
   color: var(--c_white);
-  font-family: var(--font_lato);
+  font-family: var(--ff_lato);
   font-size: var(--fz_20);
   font-weight: 500;
   z-index: 1;
@@ -98,20 +98,11 @@
   .p-sauna__number {
     /* 2.2em = 1em（テキスト高さ） + 0.6em * 2（上下パディング） */
     top: calc(var(--h_img) - 2.2em);
-    /* 310px = 620px / 2 */
-    left: calc(50% - min(50vw, 310px));
+    left: 0;
   }
 
   .p-sauna__img-wrap {
-    display: flex;
-    justify-content: center; /* 画像が620pxに達した場合、中央揃え */
-    width: 100vw; /* 画像をビューポートいっぱいに表示 */
     height: var(--h_img);
-    margin-left: calc(50% - 50vw);
-  }
-
-  .p-sauna__img {
-    max-width: 620px;
   }
 }
 

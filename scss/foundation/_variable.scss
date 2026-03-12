@@ -11,8 +11,19 @@
   --c_mask: rgba(0, 0, 0, 0.5);
 
   // フォント
-  --ff_sans: "Noto Sans JP", sans-serif;
-  --ff_lato: "Lato", sans-serif;
+  --ff_default:
+    "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    "Noto Sans JP",
+    sans-serif;
+  --ff_lato:
+    "Lato",
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    "Noto Sans JP",
+    sans-serif;
 
   // フォントサイズ
   --fz_10: calc((10 / 16) * 1rem);

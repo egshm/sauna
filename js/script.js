@@ -151,22 +151,85 @@ function scrollSpy() {
 }
 
 
+// 全img要素の読込み完了を監視
+//--------------------------------------------
+function onAllImagesLoaded(callback) {
+  const images = document.querySelectorAll("img");
+  let loadedCount = 0;
+  let isCalled = false;
+
+  // callback の重複実行を防ぐ
+  function done() {
+    if (!isCalled) {
+      isCalled = true;
+      callback();
+    }
+  }
+
+  // 画像が無い場合は即実行
+  if (images.length === 0) {
+    done();
+    return;
+  }
+
+  images.forEach(image => {
+    // すでに読込みが完了している場合
+    if (image.complete) {
+      loadedCount++;
+      if (loadedCount === images.length) done();
+      return;
+    }
+
+    // 読込みが完了した場合
+    image.addEventListener('load', function() {
+      loadedCount++;
+      if (loadedCount === images.length) done();
+    });
+
+    // 読込みエラーの場合
+    image.addEventListener('error', function() {
+      loadedCount++;
+      if (loadedCount === images.length) done();
+    });
+  });
+}
+
+
 // スムーススクロール
 //--------------------------------------------
 
-// スクロール速度（ms）
-const SCROLL_SPEED = 800;
 // スクロールオフセット調整値（px）
 const SCROLL_OFFSET_ADJUST = 20;
 
-// ページ内スクロール
-$('a[href^="#"]').on('click', function() {
-  const href = $(this).attr('href');
-  const target = $(href === '#' || href === '' ? 'html' : href);
-  const offset = $('#js-header').outerHeight() + SCROLL_OFFSET_ADJUST;
-  const position = target.offset().top - offset;
-  $('html, body').animate({scrollTop: position}, SCROLL_SPEED, 'swing');
-  return false;
+// ページ内スムーススクロール
+document.querySelectorAll('a[href^="#"]:not([href^="#!"]').forEach(function(anchor) {
+  anchor.addEventListener("click", function(event) {
+    // デフォルトのイベント動作をキャンセル
+    event.preventDefault();
+
+    // 遅延読込み画像を強制的に読込むように設定
+    document.querySelectorAll('img[loading="lazy"]').forEach(lazyImage => {
+      lazyImage.loading = "eager";
+    });
+
+    // 画像の読み込みがすべて完了したら処理を継続
+    onAllImagesLoaded(function() {
+
+      const id = anchor.getAttribute("href");
+      const target = document.querySelector(id === "#" || id === "" ? "html" : id);
+
+      if (target) {
+        const headerHeight = header.offsetHeight;
+        // ターゲット要素のドキュメント全体における絶対位置からヘッダー高さを引いた位置を算出
+        const position = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - SCROLL_OFFSET_ADJUST;
+        // ターゲット位置までスムーススクロール
+        window.scrollTo({
+          top: position,
+          behavior: "smooth"
+        });
+      }
+    });
+  });
 });
 
 

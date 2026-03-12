@@ -37,15 +37,10 @@
   }
 
   .p-about__img-wrap {
-    display: flex;
-    justify-content: center;
-    width: 100vw; /* ビューポート幅いっぱいに広げる */
     height: 248px;
-    margin-left: calc(50% - 50vw); /* ビューポート幅いっぱいに広げる */
   }
 
   .p-about__img {
-    max-width: 620px;
     height: 100%;
     object-fit: cover;
   }

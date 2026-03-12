@@ -59,6 +59,7 @@
   width: 100%;
   padding: 1.6em calc((20 / 375) * 100%);
   background: var(--c_base);
+  font-family: var(--ff_lato);
   font-size: fwd.make-clamp(10, 12, 375, 768);
 }
 
